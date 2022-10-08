@@ -2,6 +2,7 @@
 using Microsoft.ApplicationInsights;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.Extensions.Configuration;
+using MrJB.DeveloperTests.App.AutoMapper;
 using MrJB.DeveloperTests.App.Configuration;
 
 namespace MrJB.DeveloperTests.App.Tests.L5.Developer;
