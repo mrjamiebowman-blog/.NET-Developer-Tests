@@ -2,13 +2,13 @@
 This project will contain an abstract class and sample of how to use this class for building developer tests. I use something similar to this in every project for unit tests and developer ran integration tests for taking a test driven-ish approach. 
 I'll use this repo to manage these since they evolve over time. The utility helper classes can also be used in unit testing projects.   
 
-## App Packages (UI)
+## Packages (UI)
 Application Insights (Worker)
 
 AutoMapper
 
 
-## Packages
+## Packages (Test)
 
 Moq
 
