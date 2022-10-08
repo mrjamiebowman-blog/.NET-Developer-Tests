@@ -3,7 +3,7 @@ using System.Text;
 using System.Text.Json;
 using Xunit.Abstractions;
 
-namespace MrJB.DeveloperTests.App.Tests.L5.Developer
+namespace MrJB.DeveloperTests.App.Tests.L5.Developer.EventBuses
 {
     public class AzureServiceBusTests : BaseDeveloperTest
     {
