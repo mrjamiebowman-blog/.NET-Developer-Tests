@@ -3,8 +3,8 @@ This project will contain an abstract class and sample of how to use this class 
 I'll use this repo to manage these since they evolve over time. The utility helper classes can also be used in unit testing projects.   
 
 ## Packages (UI)
-Application Insights (Worker)
-AutoMapper
+Application Insights (Worker)   
+AutoMapper   
 
 
 ## Packages (Test)
