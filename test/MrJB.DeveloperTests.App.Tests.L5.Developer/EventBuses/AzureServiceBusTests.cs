@@ -51,8 +51,7 @@ namespace MrJB.DeveloperTests.App.Tests.L5.Developer.EventBuses
                     else
                     {
                         // if the first message can't fit, then it is too large for the batch
-                        throw new Exception(
-                            $"Message {messageCount - messages.Count} is too large and cannot be sent.");
+                        throw new Exception($"Message {messageCount - messages.Count} is too large and cannot be sent.");
                     }
 
                     // now, send the batch
