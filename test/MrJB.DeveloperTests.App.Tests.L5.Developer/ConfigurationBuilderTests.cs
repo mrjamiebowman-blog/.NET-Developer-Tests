@@ -52,11 +52,10 @@ public class ConfigurationBuilderTests
         };
 
         // json
-        var options = new JsonSerializerOptions
-        {
+        var options = new JsonSerializerOptions {
             Converters = {
-                    new JsonStringEnumConverter()
-                }
+                new JsonStringEnumConverter()
+            }
         };
 
         // serialize

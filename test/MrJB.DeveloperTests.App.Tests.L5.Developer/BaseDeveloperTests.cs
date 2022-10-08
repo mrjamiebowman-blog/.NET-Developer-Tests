@@ -73,8 +73,8 @@ public abstract class BaseDeveloperTest
         _configuration = configurationBuilder.Build();
 
         //// configuration: integration tests 
-        //_integrationTestsConfiguration = new IntegrationTestsConfiguration();
-        //Configuration.GetSection(IntegrationTestsConfiguration.Position).Bind(_integrationTestsConfiguration);
+        //_consumerSettings = new ConsumerSettings();
+        //Configuration.GetSection(ConsumerSettings.Position).Bind(_consumerSettings);
 
         return Task.CompletedTask;
     }
