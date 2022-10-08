@@ -1,6 +1,6 @@
 namespace MrJB.DeveloperTests.App.Tests.L5.Developer;
 
-public class UnitTest1
+public class ConfigurationBuilderTests
 {
     [Fact]
     public void Test1()
