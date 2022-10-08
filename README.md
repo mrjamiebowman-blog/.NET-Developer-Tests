@@ -14,6 +14,13 @@ Moq
 
 Fluent Assertions
 
+Microsoft.Extensions.Configuration.AzureAppConfiguration   
+Microsoft.Extensions.Configuration.Abstractions   
+Microsoft.Extensions.Configuration.Binder   
+Microsoft.Extensions.Configuration.EnvironmentVariables   
+Microsoft.Extensions.Configuration.Json   
+Microsoft.Extensions.Configuration.UserSecrets   
+
 ## Git Ignore (appSettings.json, launchSettings.json)
 ```json
 # appsettings
