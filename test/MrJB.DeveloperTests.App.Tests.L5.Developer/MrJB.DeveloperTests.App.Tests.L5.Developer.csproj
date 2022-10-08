@@ -21,4 +21,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MrJB.DeveloperTests.App\MrJB.DeveloperTests.App.csproj" />
+  </ItemGroup>
+
 </Project>
