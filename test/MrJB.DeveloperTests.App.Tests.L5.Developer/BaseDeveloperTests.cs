@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using Azure.Identity;
 using Microsoft.ApplicationInsights;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.AzureAppConfiguration;
 using MrJB.DeveloperTests.App.AutoMapper;
 using MrJB.DeveloperTests.App.Configuration;
 
@@ -16,6 +18,7 @@ public abstract class BaseDeveloperTest
     protected TelemetryClient _telemetryClient;
 
     // configuration
+    protected IConfiguration _configuration;
     protected ConsumerSettings _consumerSettings;
 
     public BaseDeveloperTest()
@@ -38,6 +41,40 @@ public abstract class BaseDeveloperTest
         // set configuration
         _consumerSettings = new ConsumerSettings();
         root.GetSection(ConsumerSettings.Position).Bind(_consumerSettings);
+
+        return Task.CompletedTask;
+    }
+
+    protected Task LoadAzureAppConfigAsync()
+    {
+        // app config
+        var connStr = Environment.GetEnvironmentVariable("AZ_APPCONFIG_CONNECTION_STRING");
+        var labelFilter = Environment.GetEnvironmentVariable("AZ_APPCONFIG_LABEL_FILTER") ?? "LABEL-FILTER";
+
+        // client id & secret
+        var tenantId = Environment.GetEnvironmentVariable("AZ_TENANT_ID");
+        var clientId = Environment.GetEnvironmentVariable("AAD_CLIENT_ID");
+        var secret = Environment.GetEnvironmentVariable("AAD_CLIENT_SECRET");
+
+        var configurationBuilder = new ConfigurationBuilder()
+            .AddAzureAppConfiguration(options =>
+            {
+                // label
+                options.Select(KeyFilter.Any, labelFilter);
+
+                options.Connect(connStr)
+                    .ConfigureKeyVault(kv =>
+                    {
+                        //kv.SetCredential(new DefaultAzureCredential());
+                        kv.SetCredential(new ClientSecretCredential(tenantId, clientId, secret));
+                    });
+            });
+
+        _configuration = configurationBuilder.Build();
+
+        //// configuration: integration tests 
+        //_integrationTestsConfiguration = new IntegrationTestsConfiguration();
+        //Configuration.GetSection(IntegrationTestsConfiguration.Position).Bind(_integrationTestsConfiguration);
 
         return Task.CompletedTask;
     }
