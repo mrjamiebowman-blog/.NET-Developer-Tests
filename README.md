@@ -4,7 +4,6 @@ I'll use this repo to manage these since they evolve over time. The utility help
 
 ## Packages (UI)
 Application Insights (Worker)
-
 AutoMapper
 
 
