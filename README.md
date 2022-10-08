@@ -13,7 +13,7 @@ Moq
 
 Fluent Assertions
 
-## Git Ignore (appSettings.json)
+## Git Ignore (appSettings.json, launchSettings.json)
 ```json
 # appsettings
 **/appSettings.json
